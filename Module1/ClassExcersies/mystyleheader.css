@@ -1,0 +1,20 @@
+.box {
+            border: 2px solid #000;
+            padding: 8px;
+            display: inline-block;
+            background-color: #f06702;
+            border-radius: 5px;
+        }
+
+
+
+
+ .label {
+    font-size: 16px;      
+    color: #333;             
+    display: inline-block;    
+    background-color: #f06702; 
+    border: 2px solid #000407;
+    padding: 10px;            
+    border-radius: 5px;       
+}

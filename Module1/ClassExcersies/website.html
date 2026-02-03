@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Quick Dollar Shop</title>
+    <link rel="stylesheet" href="mystyleheader.css">
+ 
+
+</head>
+
+<body>
+    <h1 class="box">Get your quick buys here!</h1>
+    <h2 class="box">Get this TV/PC Monitor for $249.</h2>
+    <div>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2Fwm%2F2025%2F01%2Fmsi-introduces-worlds-first-27-inch-4k-240hz-and-2k-500hz-qd-oled-gaming-monitors-with-dp-21a-game-rant-feature.jpg&f=1&nofb=1&ipt=4528ca72ccaccdf1fc75c3dedcafb693f3048520f191238ac79f555d03fe2bc7"
+            alt="no image to display" width="500" height="300">
+    </div>
+    <div>
+        <label class="label" for="EnterShippingAddress">Enter Shipping Address:</label><br> <input type="text" id="shippingAddress"
+            name="shippingAddress" value="123 Main Street, Cityville, ST 12345">
+    </div>
+    <input type="button" value="Order Now"> </form>
+    <script>
+        document.querySelector('input[type="button"]').addEventListener('click', function () {
+            var address = document.getElementById('shippingAddress').value;
+            alert('Thank you for your order! Your item will be shipped to: ' + address);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -7,7 +7,7 @@
     <title>Module 1 Exercise 3</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: Helvetica;
             margin: 0;
         }
 
@@ -46,7 +46,7 @@
                </style>
 
             <button class="color-button" onclick="changeColor1()">Click Me!</button>
-            <button class="color-button" onclick="changeHeadingColor1()">Change Heading Color</button>
+            <button class="color-button" onclick="changeHeadingColor1()">Click Me Also!</button>
         </div>
         <div class="column" id="column2">
             <h1 id="heading2">World</h1>
@@ -64,7 +64,7 @@
                 </style>
             
             <button class="color-button" onclick="changeColor2()">Click Me!</button>
-            <button class="color-button" onclick="changeHeadingColor2()">Change Heading Color</button>
+            <button class="color-button" onclick="changeHeadingColor2()">Click Me Also!</button>
          </div>
          <script>
             function changeColor1() {
@@ -76,7 +76,7 @@
             
             }
 
-                 function changeColor2() {
+          function changeColor2() {
             const column2 = document.getElementById('column2');
             const randomColor2= '#' + Math.floor(Math.random() * 16777215).toString(16);
             column2.style.backgroundColor = randomColor2;
