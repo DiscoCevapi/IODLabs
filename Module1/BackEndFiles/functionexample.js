@@ -1,7 +1,7 @@
 function analyzeSentiment(text) {
-    var sentiment = require('sentiment');
-    var sentiment = new sentiment();
-    var result = sentiment.analyze(text);
+    const sentiment = require('sentiment');
+    const sentimentAnalyzer = new sentiment();
+    const result = sentimentAnalyzer.analyze(text);
     return result;
 } 
 
