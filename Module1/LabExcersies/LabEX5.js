@@ -3,8 +3,8 @@ let brands = ["Apple", "Samsung", "Google", "Microsoft", "Amazon"]
 console.log(brands)
 
 // 1. Replacing the value of the element of position  0 and 3
-brands  [0] = "OnePlus"
-brands  [3] = "Facebook"
+brands  [0] = "Vodafone"
+brands  [3] = "Netflix"
 console.log(brands)
 
 
