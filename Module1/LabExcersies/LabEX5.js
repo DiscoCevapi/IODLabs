@@ -2,10 +2,11 @@
 let brands = ["Apple", "Samsung", "Google", "Microsoft", "Amazon"]
 console.log(brands)
 
-// 1. Update the second brand to "Chrome" and the fifth brand to "Facebook"
-brands[1]= "Chrome"
-brands[4]= "Facebook"
+// 1. Replacing the value of the element of position  1 and 4
+brands[1] = "Sony"
+brands[4] = "Facebook"
 console.log(brands)
+
 
 // 1. Add a new brand to the start of the array
 brands.unshift("Ebay")
