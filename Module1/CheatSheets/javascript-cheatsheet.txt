@@ -1,0 +1,691 @@
+JAVASCRIPT CHEATSHEET - University Study Guide
+===============================================
+
+1. JAVASCRIPT BASICS
+---------------------
+// JavaScript can be added in three ways:
+
+// 1. Inline JavaScript
+<button onclick="alert('Hello!')">Click me</button>
+
+// 2. Internal JavaScript
+<script>
+    console.log("Hello World!");
+</script>
+
+// 3. External JavaScript (recommended)
+<script src="script.js"></script>
+
+// Comments
+// Single line comment
+/* 
+   Multi-line
+   comment
+*/
+
+2. VARIABLES AND DATA TYPES
+----------------------------
+// Variable declarations
+var oldWay = "avoid using var";           // Function-scoped, can be redeclared
+let modernWay = "use let for variables";  // Block-scoped, can be reassigned
+const constant = "use const for constants"; // Block-scoped, cannot be reassigned
+
+// Data Types
+// Primitive types
+let string = "Hello World";               // String
+let number = 42;                          // Number
+let float = 3.14;                        // Number (no separate float type)
+let boolean = true;                      // Boolean
+let nothing = null;                      // Null
+let notDefined;                          // Undefined
+let symbol = Symbol('id');               // Symbol (ES6)
+let bigInt = 123n;                       // BigInt
+
+// Complex types
+let array = [1, 2, 3, "mixed"];          // Array
+let object = { name: "John", age: 30 };  // Object
+let func = function() { return "hi"; };  // Function
+
+// Type checking
+typeof "hello";          // "string"
+typeof 42;               // "number"
+typeof true;             // "boolean"
+typeof undefined;        // "undefined"
+typeof null;             // "object" (JavaScript quirk)
+typeof {};               // "object"
+typeof [];               // "object"
+typeof function() {};    // "function"
+
+3. STRINGS
+----------
+// String creation
+let str1 = "Double quotes";
+let str2 = 'Single quotes';
+let str3 = `Template literal ${str1}`;   // Template literals (ES6)
+
+// String methods
+let text = "JavaScript";
+text.length;                    // 10
+text.charAt(0);                // "J"
+text.indexOf("Script");        // 4
+text.substring(0, 4);          // "Java"
+text.slice(0, 4);              // "Java"
+text.toLowerCase();            // "javascript"
+text.toUpperCase();            // "JAVASCRIPT"
+text.replace("Java", "Type");  // "TypeScript"
+text.split("");                // ["J","a","v","a","S","c","r","i","p","t"]
+text.trim();                   // removes whitespace
+
+// Template literals
+let name = "Alice";
+let age = 25;
+let message = `Hello ${name}, you are ${age} years old`;
+let multiline = `
+    This is a
+    multi-line string
+`;
+
+4. NUMBERS
+----------
+// Number operations
+let a = 10;
+let b = 3;
+
+a + b;    // 13 (addition)
+a - b;    // 7 (subtraction)
+a * b;    // 30 (multiplication)
+a / b;    // 3.333... (division)
+a % b;    // 1 (modulus/remainder)
+a ** b;   // 1000 (exponentiation)
+
+// Math object
+Math.PI;              // 3.14159...
+Math.round(4.7);      // 5
+Math.floor(4.7);      // 4
+Math.ceil(4.3);       // 5
+Math.max(1, 2, 3);    // 3
+Math.min(1, 2, 3);    // 1
+Math.random();        // Random number 0-1
+Math.abs(-5);         // 5
+
+// Number methods
+let num = 123.456;
+num.toString();       // "123.456"
+num.toFixed(2);       // "123.46"
+parseInt("123");      // 123
+parseFloat("123.45"); // 123.45
+Number("123");        // 123
+
+5. ARRAYS
+---------
+// Array creation
+let arr = [1, 2, 3, 4, 5];
+let mixed = [1, "hello", true, null];
+let empty = [];
+let withNew = new Array(5);  // Creates array with 5 empty slots
+
+// Array properties and methods
+arr.length;                  // 5
+arr[0];                      // 1 (first element)
+arr[arr.length - 1];         // 5 (last element)
+
+// Adding/removing elements
+arr.push(6);                 // Add to end: [1,2,3,4,5,6]
+arr.pop();                   // Remove from end: [1,2,3,4,5]
+arr.unshift(0);              // Add to beginning: [0,1,2,3,4,5]
+arr.shift();                 // Remove from beginning: [1,2,3,4,5]
+
+// Array methods
+arr.indexOf(3);              // 2 (index of element)
+arr.includes(3);             // true
+arr.slice(1, 3);             // [2,3] (extract portion)
+arr.splice(1, 2);            // Remove 2 elements starting at index 1
+arr.join(", ");              // "1, 2, 3, 4, 5" (join to string)
+arr.reverse();               // [5,4,3,2,1]
+arr.sort();                  // [1,2,3,4,5] (lexicographical by default)
+
+// Higher-order array methods (ES5+)
+let numbers = [1, 2, 3, 4, 5];
+
+// forEach - iterate over array
+numbers.forEach(num => console.log(num));
+
+// map - transform each element
+let doubled = numbers.map(num => num * 2);      // [2,4,6,8,10]
+
+// filter - select elements that match condition
+let evens = numbers.filter(num => num % 2 === 0); // [2,4]
+
+// reduce - reduce array to single value
+let sum = numbers.reduce((acc, num) => acc + num, 0); // 15
+
+// find - find first element that matches
+let found = numbers.find(num => num > 3);       // 4
+
+// some - check if any element matches
+let hasEven = numbers.some(num => num % 2 === 0); // true
+
+// every - check if all elements match
+let allPositive = numbers.every(num => num > 0);   // true
+
+6. OBJECTS
+----------
+// Object creation
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York",
+    isStudent: false
+};
+
+// Accessing properties
+person.name;           // "John" (dot notation)
+person["age"];         // 30 (bracket notation)
+let prop = "city";
+person[prop];          // "New York" (dynamic property access)
+
+// Adding/modifying properties
+person.job = "Developer";
+person.age = 31;
+person["salary"] = 50000;
+
+// Deleting properties
+delete person.isStudent;
+
+// Object methods
+Object.keys(person);      // Array of property names
+Object.values(person);    // Array of property values
+Object.entries(person);   // Array of [key, value] pairs
+Object.hasOwnProperty.call(person, 'name'); // true
+
+// Object destructuring (ES6)
+let { name, age } = person;
+let { name: personName, age: personAge } = person; // Rename variables
+
+// Object methods
+let calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+    // ES6 shorthand
+    subtract(a, b) {
+        return a - b;
+    },
+    // Arrow function (be careful with 'this')
+    multiply: (a, b) => a * b
+};
+
+7. FUNCTIONS
+------------
+// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Function expression
+let greetExp = function(name) {
+    return "Hello, " + name + "!";
+};
+
+// Arrow function (ES6)
+let greetArrow = (name) => "Hello, " + name + "!";
+let greetArrowShort = name => "Hello, " + name + "!"; // Single parameter
+let add = (a, b) => a + b;                            // Single expression
+let complex = (x, y) => {                             // Multiple statements
+    let result = x + y;
+    return result * 2;
+};
+
+// Default parameters (ES6)
+function greetDefault(name = "World") {
+    return "Hello, " + name + "!";
+}
+
+// Rest parameters (ES6)
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+// IIFE (Immediately Invoked Function Expression)
+(function() {
+    console.log("This runs immediately!");
+})();
+
+// Higher-order functions
+function higherOrder(callback) {
+    return callback();
+}
+
+higherOrder(() => console.log("Callback executed!"));
+
+8. CONDITIONALS
+---------------
+// if-else statements
+let score = 85;
+
+if (score >= 90) {
+    console.log("A grade");
+} else if (score >= 80) {
+    console.log("B grade");
+} else if (score >= 70) {
+    console.log("C grade");
+} else {
+    console.log("F grade");
+}
+
+// Ternary operator
+let result = score >= 80 ? "Pass" : "Fail";
+
+// Switch statement
+let day = "Monday";
+switch (day) {
+    case "Monday":
+        console.log("Start of work week");
+        break;
+    case "Friday":
+        console.log("TGIF!");
+        break;
+    case "Saturday":
+    case "Sunday":
+        console.log("Weekend!");
+        break;
+    default:
+        console.log("Regular day");
+}
+
+// Comparison operators
+5 == "5";    // true (loose equality)
+5 === "5";   // false (strict equality)
+5 != "6";    // true
+5 !== "5";   // true (strict inequality)
+5 > 3;       // true
+5 >= 5;      // true
+
+// Logical operators
+true && false;   // false (AND)
+true || false;   // true (OR)
+!true;           // false (NOT)
+
+9. LOOPS
+--------
+// for loop
+for (let i = 0; i < 5; i++) {
+    console.log(i); // 0, 1, 2, 3, 4
+}
+
+// while loop
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+
+// do-while loop
+let j = 0;
+do {
+    console.log(j);
+    j++;
+} while (j < 5);
+
+// for...in loop (objects)
+let person = { name: "John", age: 30 };
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+
+// for...of loop (arrays, strings, iterables) - ES6
+let colors = ["red", "green", "blue"];
+for (let color of colors) {
+    console.log(color);
+}
+
+// break and continue
+for (let i = 0; i < 10; i++) {
+    if (i === 3) continue;  // Skip iteration
+    if (i === 7) break;     // Exit loop
+    console.log(i);
+}
+
+10. ERROR HANDLING
+------------------
+// try-catch-finally
+try {
+    let result = riskyOperation();
+    console.log(result);
+} catch (error) {
+    console.error("An error occurred:", error.message);
+} finally {
+    console.log("This always runs");
+}
+
+// Throwing errors
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Division by zero is not allowed");
+    }
+    return a / b;
+}
+
+// Custom error types
+class CustomError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "CustomError";
+    }
+}
+
+11. DOM MANIPULATION
+--------------------
+// Selecting elements
+document.getElementById("myId");
+document.getElementsByClassName("myClass");
+document.getElementsByTagName("p");
+document.querySelector("#myId");           // First match
+document.querySelectorAll(".myClass");     // All matches
+
+// Creating and modifying elements
+let newElement = document.createElement("div");
+newElement.textContent = "Hello World";
+newElement.innerHTML = "<strong>Bold text</strong>";
+newElement.setAttribute("class", "myClass");
+newElement.classList.add("newClass");
+newElement.classList.remove("oldClass");
+newElement.classList.toggle("active");
+
+// Adding to DOM
+document.body.appendChild(newElement);
+document.body.insertBefore(newElement, existingElement);
+
+// Event handling
+element.addEventListener("click", function(event) {
+    console.log("Clicked!");
+    event.preventDefault(); // Prevent default behavior
+});
+
+// Remove event listener
+element.removeEventListener("click", handlerFunction);
+
+// Common events: click, mouseenter, mouseleave, keydown, keyup, submit, load
+
+12. ASYNC JAVASCRIPT
+--------------------
+// setTimeout and setInterval
+setTimeout(() => {
+    console.log("Executed after 2 seconds");
+}, 2000);
+
+let intervalId = setInterval(() => {
+    console.log("Executed every second");
+}, 1000);
+
+clearInterval(intervalId); // Stop the interval
+
+// Promises (ES6)
+let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if (Math.random() > 0.5) {
+            resolve("Success!");
+        } else {
+            reject("Error occurred!");
+        }
+    }, 1000);
+});
+
+promise
+    .then(result => console.log(result))
+    .catch(error => console.error(error))
+    .finally(() => console.log("Promise completed"));
+
+// Async/Await (ES2017)
+async function fetchData() {
+    try {
+        let response = await fetch("https://api.example.com/data");
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+// Using async function
+fetchData().then(data => console.log(data));
+
+13. ES6+ FEATURES
+-----------------
+// Destructuring
+let [first, second, ...rest] = [1, 2, 3, 4, 5];
+let { name, age, ...others } = { name: "John", age: 30, city: "NYC" };
+
+// Spread operator
+let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5];        // [1, 2, 3, 4, 5]
+let obj1 = { a: 1, b: 2 };
+let obj2 = { ...obj1, c: 3 };      // { a: 1, b: 2, c: 3 }
+
+// Classes
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    
+    speak() {
+        console.log(`${this.name} makes a sound`);
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, breed) {
+        super(name);
+        this.breed = breed;
+    }
+    
+    speak() {
+        console.log(`${this.name} barks`);
+    }
+}
+
+// Modules
+// Export (in module.js)
+export const PI = 3.14159;
+export function add(a, b) { return a + b; }
+export default class Calculator { }
+
+// Import (in another file)
+import Calculator, { PI, add } from './module.js';
+
+14. JSON
+--------
+// JavaScript Object Notation
+let person = {
+    name: "John",
+    age: 30,
+    hobbies: ["reading", "coding"]
+};
+
+// Convert object to JSON string
+let jsonString = JSON.stringify(person);
+
+// Convert JSON string to object
+let parsedObject = JSON.parse(jsonString);
+
+15. LOCAL STORAGE
+-----------------
+// Store data
+localStorage.setItem("username", "john_doe");
+localStorage.setItem("preferences", JSON.stringify({ theme: "dark" }));
+
+// Retrieve data
+let username = localStorage.getItem("username");
+let preferences = JSON.parse(localStorage.getItem("preferences"));
+
+// Remove data
+localStorage.removeItem("username");
+localStorage.clear(); // Clear all
+
+// Session storage (similar API, but data expires when tab closes)
+sessionStorage.setItem("key", "value");
+
+16. REGULAR EXPRESSIONS
+-----------------------
+// Creating regex
+let regex1 = /pattern/flags;
+let regex2 = new RegExp("pattern", "flags");
+
+// Common flags
+// g - global (find all matches)
+// i - case insensitive
+// m - multiline
+
+// Testing and matching
+let text = "Hello World";
+let pattern = /hello/i;
+pattern.test(text);           // true
+text.match(pattern);          // ["Hello"]
+text.replace(pattern, "Hi");  // "Hi World"
+
+// Common patterns
+/\d+/g;          // One or more digits
+/\w+/g;          // One or more word characters
+/\s+/g;          // One or more whitespace
+/[a-zA-Z]/g;     // Letters only
+/^\w+@\w+\.\w+$/; // Simple email validation
+
+17. COMMON METHODS AND UTILITIES
+---------------------------------
+// Type checking
+function isArray(obj) {
+    return Array.isArray(obj);
+}
+
+function isObject(obj) {
+    return obj !== null && typeof obj === 'object' && !Array.isArray(obj);
+}
+
+// Deep clone
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+// Debounce function
+function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// Random utilities
+Math.floor(Math.random() * 10);        // Random integer 0-9
+Math.floor(Math.random() * 6) + 1;     // Random dice roll 1-6
+
+18. COMMON PATTERNS
+-------------------
+// Module pattern
+const MyModule = (function() {
+    let privateVariable = 0;
+    
+    function privateFunction() {
+        console.log("Private function");
+    }
+    
+    return {
+        publicMethod: function() {
+            privateVariable++;
+            privateFunction();
+        },
+        getCount: function() {
+            return privateVariable;
+        }
+    };
+})();
+
+// Observer pattern
+class EventEmitter {
+    constructor() {
+        this.events = {};
+    }
+    
+    on(event, callback) {
+        if (!this.events[event]) {
+            this.events[event] = [];
+        }
+        this.events[event].push(callback);
+    }
+    
+    emit(event, data) {
+        if (this.events[event]) {
+            this.events[event].forEach(callback => callback(data));
+        }
+    }
+}
+
+19. BEST PRACTICES
+------------------
+✓ Use const for constants, let for variables, avoid var
+✓ Use strict mode: 'use strict';
+✓ Use meaningful variable and function names
+✓ Keep functions small and focused
+✓ Use arrow functions for callbacks
+✓ Handle errors properly with try-catch
+✓ Use async/await instead of callback hell
+✓ Comment your code when necessary
+✓ Use consistent indentation and formatting
+✓ Avoid global variables
+✓ Use === instead of ==
+✓ Validate user inputs
+✓ Use template literals instead of string concatenation
+
+20. COMMON MISTAKES TO AVOID
+-----------------------------
+✗ Using == instead of ===
+✗ Forgetting to declare variables (creates globals)
+✗ Not handling asynchronous operations properly
+✗ Modifying arrays/objects while iterating
+✗ Not checking if elements exist before manipulating
+✗ Forgetting 'this' binding in methods
+✗ Not handling errors in promises
+✗ Using var instead of let/const
+✗ Creating memory leaks with event listeners
+✗ Not validating function parameters
+
+21. DEBUGGING
+-------------
+// Console methods
+console.log("Basic logging");
+console.error("Error message");
+console.warn("Warning message");
+console.info("Info message");
+console.table([{a: 1, b: 2}, {a: 3, b: 4}]);
+console.group("Group name");
+console.groupEnd();
+
+// Debugger statement
+debugger; // Pauses execution in browser dev tools
+
+// Error handling
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error("Global error:", message);
+};
+
+22. USEFUL RESOURCES
+--------------------
+- MDN JavaScript Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- JavaScript.info: https://javascript.info/
+- Can I Use: https://caniuse.com/
+- JSLint/ESLint: Code quality tools
+- Node.js Documentation: https://nodejs.org/docs/
+- Eloquent JavaScript (book): https://eloquentjavascript.net/
+
+=======================================
+Study Tips:
+- Practice coding daily
+- Use browser developer tools extensively
+- Build small projects to apply concepts
+- Learn modern ES6+ features
+- Understand asynchronous JavaScript
+- Practice debugging techniques
+- Read other people's code
+- Use online coding challenges
+- Learn a JavaScript framework after mastering basics
+=======================================

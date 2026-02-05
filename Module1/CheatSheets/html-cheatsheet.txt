@@ -1,0 +1,339 @@
+HTML CHEATSHEET - University Study Guide
+==========================================
+
+1. BASIC HTML STRUCTURE
+-----------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+</head>
+<body>
+    <!-- Content goes here -->
+</body>
+</html>
+
+2. ESSENTIAL HEAD ELEMENTS
+---------------------------
+<title>Page Title</title>                    <!-- Browser tab title -->
+<meta charset="UTF-8">                       <!-- Character encoding -->
+<meta name="description" content="...">      <!-- Page description for SEO -->
+<meta name="keywords" content="...">         <!-- Keywords for SEO -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Mobile responsiveness -->
+<link rel="stylesheet" href="style.css">     <!-- External CSS -->
+<script src="script.js"></script>           <!-- External JavaScript -->
+
+3. TEXT ELEMENTS
+----------------
+<h1> to <h6>        Headings (h1 largest, h6 smallest)
+<p>                 Paragraph
+<br>                Line break (self-closing)
+<hr>                Horizontal rule (self-closing)
+<strong>            Bold text (semantic importance)
+<b>                 Bold text (visual only)
+<em>                Italic text (semantic emphasis)
+<i>                 Italic text (visual only)
+<u>                 Underlined text
+<del>               Deleted/strikethrough text
+<ins>               Inserted text
+<mark>              Highlighted text
+<small>             Smaller text
+<sub>               Subscript
+<sup>               Superscript
+<blockquote>        Block quotation
+<q>                 Inline quotation
+<cite>              Citation
+<abbr>              Abbreviation
+<code>              Inline code
+<pre>               Preformatted text
+<kbd>               Keyboard input
+<var>               Variable
+
+4. LISTS
+--------
+<!-- Unordered List -->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<!-- Ordered List -->
+<ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ol>
+
+<!-- Description List -->
+<dl>
+    <dt>Term</dt>
+    <dd>Definition</dd>
+</dl>
+
+5. LINKS AND NAVIGATION
+-----------------------
+<a href="https://example.com">External link</a>
+<a href="page.html">Internal link</a>
+<a href="#section">Link to section on same page</a>
+<a href="mailto:email@example.com">Email link</a>
+<a href="tel:+1234567890">Phone link</a>
+<a href="file.pdf" download>Download link</a>
+<a href="https://example.com" target="_blank">Open in new tab</a>
+<a href="https://example.com" rel="nofollow">No-follow link</a>
+
+6. IMAGES AND MEDIA
+-------------------
+<img src="image.jpg" alt="Description" width="300" height="200">
+<img src="image.jpg" alt="Description" loading="lazy">  <!-- Lazy loading -->
+
+<figure>
+    <img src="image.jpg" alt="Description">
+    <figcaption>Image caption</figcaption>
+</figure>
+
+<video controls width="400">
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support video.
+</video>
+
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="audio.ogg" type="audio/ogg">
+    Your browser does not support audio.
+</audio>
+
+<iframe src="https://example.com" width="400" height="300"></iframe>
+
+7. TABLES
+---------
+<table>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td colspan="2">Merged cell</td>
+            <td>Data 3</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Footer 1</td>
+            <td>Footer 2</td>
+            <td>Footer 3</td>
+        </tr>
+    </tfoot>
+</table>
+
+8. FORMS
+--------
+<form action="/submit" method="POST">
+    <!-- Text Input -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter name" required>
+    
+    <!-- Email Input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <!-- Password Input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <!-- Number Input -->
+    <input type="number" name="age" min="1" max="100" step="1">
+    
+    <!-- Date Input -->
+    <input type="date" name="birthdate">
+    
+    <!-- Radio Buttons -->
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    
+    <!-- Checkboxes -->
+    <input type="checkbox" id="subscribe" name="newsletter" value="yes">
+    <label for="subscribe">Subscribe to newsletter</label>
+    
+    <!-- Select Dropdown -->
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+        <option value="">Select a country</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="ca">Canada</option>
+    </select>
+    
+    <!-- Textarea -->
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter message"></textarea>
+    
+    <!-- File Upload -->
+    <input type="file" name="upload" accept=".jpg,.png,.pdf">
+    
+    <!-- Hidden Input -->
+    <input type="hidden" name="token" value="abc123">
+    
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+
+9. SEMANTIC HTML5 ELEMENTS
+---------------------------
+<header>            Page or section header
+<nav>               Navigation links
+<main>              Main content area
+<article>           Independent content
+<section>           Thematic content grouping
+<aside>             Sidebar content
+<footer>            Page or section footer
+<details>           Collapsible content
+<summary>           Summary for details element
+<time>              Date/time
+<address>           Contact information
+
+Example layout:
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <article>
+        <h1>Article Title</h1>
+        <p>Article content...</p>
+    </article>
+    <aside>
+        <h2>Related Links</h2>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+    </aside>
+</main>
+<footer>
+    <p>&copy; 2024 Your Website</p>
+</footer>
+
+10. COMMON ATTRIBUTES
+---------------------
+id="unique-identifier"         Unique identifier for element
+class="class-name"            CSS class for styling
+style="color: red;"           Inline CSS styles
+title="Tooltip text"          Tooltip on hover
+lang="en"                     Language specification
+dir="ltr"                     Text direction (ltr/rtl)
+data-*="custom-data"          Custom data attributes
+contenteditable="true"        Makes element editable
+draggable="true"             Makes element draggable
+hidden                       Hides element
+tabindex="1"                 Tab order for keyboard navigation
+
+11. SPECIAL CHARACTERS (HTML ENTITIES)
+---------------------------------------
+&lt;        <  (less than)
+&gt;        >  (greater than)
+&amp;       &  (ampersand)
+&quot;      "  (quotation mark)
+&apos;      '  (apostrophe)
+&nbsp;      Non-breaking space
+&copy;      ©  (copyright)
+&reg;       ®  (registered trademark)
+&trade;     ™  (trademark)
+&euro;      €  (euro)
+&pound;     £  (pound)
+&yen;       ¥  (yen)
+
+12. COMMENTS
+------------
+<!-- This is an HTML comment -->
+<!-- 
+Multi-line
+comment
+-->
+
+13. BEST PRACTICES
+------------------
+✓ Always use lowercase for tags and attributes
+✓ Close all tags properly
+✓ Use semantic HTML elements when appropriate
+✓ Include alt text for images
+✓ Use proper heading hierarchy (h1 > h2 > h3...)
+✓ Validate your HTML using W3C validator
+✓ Use meaningful class and id names
+✓ Indent nested elements for readability
+✓ Include DOCTYPE declaration
+✓ Set proper meta tags for SEO and mobile
+✓ Use external CSS and JavaScript files
+✓ Test across different browsers
+✓ Ensure accessibility (ARIA labels when needed)
+
+14. ACCESSIBILITY BASICS
+-------------------------
+<img src="photo.jpg" alt="Person smiling in a garden">
+<button aria-label="Close dialog">×</button>
+<input type="text" aria-describedby="help-text">
+<p id="help-text">Enter your full name</p>
+<nav role="navigation">
+<main role="main">
+<h1 tabindex="-1">Page Title</h1>  <!-- For screen readers -->
+
+15. MOBILE-FIRST CONSIDERATIONS
+--------------------------------
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<picture>
+    <source media="(min-width: 800px)" srcset="large.jpg">
+    <source media="(min-width: 400px)" srcset="medium.jpg">
+    <img src="small.jpg" alt="Description">
+</picture>
+
+16. COMMON MISTAKES TO AVOID
+-----------------------------
+✗ Missing DOCTYPE declaration
+✗ Not closing tags
+✗ Using deprecated tags (<font>, <center>, <b> for styling)
+✗ Missing alt attributes on images
+✗ Incorrect nesting of elements
+✗ Using inline styles instead of CSS
+✗ Not using semantic HTML
+✗ Missing meta viewport tag
+✗ Using tables for layout
+✗ Not validating HTML
+
+17. USEFUL RESOURCES
+--------------------
+- W3C HTML Validator: https://validator.w3.org/
+- MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/HTML
+- HTML5 Specification: https://html.spec.whatwg.org/
+- Can I Use (browser support): https://caniuse.com/
+- WebAIM (accessibility): https://webaim.org/
+
+==========================================
+Study Tips:
+- Practice building complete web pages
+- Validate your HTML regularly
+- Study semantic HTML for better structure
+- Learn CSS alongside HTML for styling
+- Practice form creation and validation
+- Test your pages in different browsers
+==========================================
