@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="LoginPage.css">
+    </head>
+    <header>
+<body>
+    <h1 class="animated-title">Login to Your Account</h1>
+    </header>
+      <div class="center-container">
+    <form class="login-form" action="/actionpage">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" class="login-form-button" value="Login">
+        <input type="button" id="forgot password?" class="forgot-password-button" value="Forgot Password?">
+    </div>
+    <section>
+        
+    </section>
+    
+    </form>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>   
+    <script>
+        document.querySelector('input[type="submit"]').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent form submission
+            var username = document.getElementById('username').value;
+            alert('Login successful! Welcome back, ' + username);          
+        });
+ </script>   
+</body>
+<footer>    
+
+</footer>
+</html>
