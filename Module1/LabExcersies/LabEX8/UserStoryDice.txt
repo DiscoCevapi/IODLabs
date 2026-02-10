@@ -1,0 +1,128 @@
+1. Header & Layout
+
+As a user,
+
+I want to see a header at the top of the page
+
+So that I know the purpose of the page (“Roll a 6-Face or 10-Face Dice”).
+
+Acceptance criteria:
+
+Header is fixed at the top.
+
+Uses Impact font.
+
+Header text is readable on all screen sizes.
+
+2. 6-Face Dice Box
+
+As a user,
+
+I want a box for rolling a 6-face dice
+
+So I can roll a standard dice and see the result.
+
+Acceptance criteria:
+
+The box is visually distinct (shadowed, rounded).
+
+Includes a dice display element (shows number or dice emoji).
+
+Includes a button labeled “Roll 6-Face Dice”.
+
+3. 10-Face Dice Box
+
+As a user,
+
+I want a separate box for rolling a 10-face dice
+
+So I can roll a dice with 10 sides and see the result.
+
+Acceptance criteria:
+
+The box is visually distinct and separate from the 6-face dice.
+
+Includes a dice display element (shows number or emoji).
+
+Includes a button labeled “Roll 10-Face Dice”.
+
+4. Dice Rolling Animation
+
+As a user,
+
+I want the dice to animate when rolled
+
+So I can visually see the dice “rolling” instead of instantly showing a number.
+
+Acceptance criteria:
+
+Dice spins while falling (falling + rolling animation).
+
+Animation duration is ~1 second.
+
+After animation completes, a random number is displayed.
+
+5. Random Number Generation
+
+As a user,
+
+I want the dice to show a random number when rolled
+
+So the dice behaves realistically.
+
+Acceptance criteria:
+
+6-face dice shows a number between 1–6.
+
+10-face dice shows a number between 1–10.
+
+Each roll generates a new random number.
+
+6. Button Interactions
+
+As a user,
+
+I want to click a button to roll each dice
+
+So I can trigger the dice roll manually.
+
+Acceptance criteria:
+
+Clicking the button triggers the falling + rolling animation.
+
+While rolling, repeated clicks should not break the animation.
+
+After roll, the dice number updates.
+
+7. Responsive Layout
+
+As a user,
+
+I want the page to look good on different screen sizes
+
+So I can use it on desktop, tablet, or mobile.
+
+Acceptance criteria:
+
+Dice boxes remain centered.
+
+Header remains fixed and visible.
+
+Dice and buttons scale properly on small screens.
+
+8. Accessibility
+
+As a user with accessibility needs,
+
+I want buttons and dice displays to be readable and navigable
+
+So I can use keyboard or screen readers.
+
+Acceptance criteria:
+
+Buttons have visible focus states.
+
+Dice numbers are text-based (not just emojis) for screen readers.
+
+// Simple Use //
+A simple
