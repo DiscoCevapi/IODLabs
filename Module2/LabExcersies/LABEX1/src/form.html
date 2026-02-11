@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <form method="POST" action="http://localhost:3000/profile">
+    <label for="name">Name: </label>
+    <input type="text" id="firstname" name="name"><br>
+    </div>
+
+    <div>
+      <p>Select your favorite coding language:</p>
+      <input type="radio" id="javascript" name="language" value="javascript">
+      <label for="javascript">JavaScript</label><br>
+    </div>
+
+    <div>
+      <input type="radio" id="htmlandcss" name="language" value="HTML and CSS">
+      <label for="htmlandcss">HTML and CSS</label><br>
+    </div>
+
+    <div>
+      <input type="radio" id="python" name="language" value="Python">
+      <label for="python">Python</label><br><br>
+    </div>
+
+    <div>
+      <p>Select the types of vehicles you own:</p>
+      <input type="checkbox" id="car" name="vehicle" value="car">
+      <label for="car">Car</label><br>
+
+      <input type="checkbox" id="motorcycle" name="vehicle" value="motorcycle">
+      <label for="motorcycle">Motorcycle</label><br>
+
+      <input type="checkbox" id="bicycle" name="vehicle" value="bicycle">
+      <label for="bicycle">Bicycle</label><br><br>
+    </div>
+
+    <div>
+      <label for="carbrand">Select the brand of car you own:</label><br>
+      <select id="carbrand" name="carbrand">
+        <option value="">--Select a brand--</option>
+        <option value="toyota">Toyota</option>
+        <option value="honda">Honda</option>
+        <option value="ford">Ford</option>
+        <option value="bmw">BMW</option>
+        <option value="mercedes">Mercedes-Benz</option>
+      </select><br><br>
+    </div>
+
+    <div>
+    <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <header>
+    <nav>
+      <!-- works like <a href="/index.html">Home</a> -->
+      <a href="/">Home</a>
+      <a href="/form.html">Form</a>
+    </nav>
+  </header>
+
+  <main>
+  </main>
+
+  <footer>Copyright &copy; 2024</footer>
+</body>
+
+</html>
