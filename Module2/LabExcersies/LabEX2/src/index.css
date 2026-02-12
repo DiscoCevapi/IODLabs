@@ -136,14 +136,23 @@ a:visited {
 .calc-style {
     width: calc(100vw - 100px);
     background-color: #e0e0e0;
+    align-items: flex;
+}
+
+.calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .fixed-width-col {
     width: 350px;
-    display: inline-block;
+    order: 2;
 }
 
 .fluid-col {
     display: inline-block;
-    width: calc(100% - 350px);
+    width: calc(100% - 250px);
+    order: 1;
+
 }
