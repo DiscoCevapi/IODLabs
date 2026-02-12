@@ -1,0 +1,149 @@
+/* I. Selectors */
+article {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid black;
+
+
+}
+
+article {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid black;
+
+
+}
+
+article {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid black;
+
+
+}
+/* Put styles for questions 1.1, 1.2, 1.3 and 1.4 here */
+.style-me1 {
+    color: red;
+}
+
+#style-me2 {
+    color: blue;
+}
+
+#style-me2.style-me1 {
+    color: purple;
+}
+/* Put styles for questions 2.1 and 2.2 here */
+
+div p {
+    background-color: red;
+}
+
+.my-children-are-styled > p {
+    background-color: lightgreen;
+}
+
+.my-descendants-are-styled > p {
+    background-color: lightgreen;
+}
+
+
+/* II. Box model and common properties */
+/* Put styles for questions 1-8 here */
+.box {
+    background: url('../assets/images/img1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f06f0c;
+    border: 10px;
+    border-width: 10px;
+    border-color: black;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 2em;
+    width: 50vh;
+    height: 35vw !important;
+    overflow: auto;
+    outline: 10px;
+
+
+
+}
+
+/* III. Positioning */
+/* Put styles for questions 1-3 here */
+.position-absolute {
+    position: absolute;
+    top: 0;
+    background-color: #00ff9d;
+}
+
+.position-relative {
+    position: relative;
+    background-color: #d66101;
+}
+
+.position-sticky {
+    position: sticky;
+    top: 20px;
+    background-color: #ef1010;
+    padding: 10px;
+}
+
+/* IV. Styling text */
+/* Put styles for questions 1-10 here */
+.text-style {
+    color: #2c3e50;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Playwrite NZ Basic Guides", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: 6px;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    text-decoration: underline;
+
+}
+
+/* V. Styling links */
+/* Put styles for questions 1-3 here */
+a, a:link {
+    color: #3366cc;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a:hover, a:active, a:focus {
+    color: #003366;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #800080;
+    font-style: italic;
+}
+
+
+
+/* VI. calc() */
+/* Put styles for questions 1-3 here */
+
+.calc-style {
+    width: calc(100vw - 100px);
+    background-color: #e0e0e0;
+}
+
+.fixed-width-col {
+    width: 350px;
+    display: inline-block;
+}
+
+.fluid-col {
+    display: inline-block;
+    width: calc(100% - 350px);
+}
